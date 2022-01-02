@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div id="container" class="container-medium edges centered">
+<div class="doc-head mb-4 container-10">
+    <h5 class="heading-micro heading-muted">{{ .CurrentSection.Title }}</h5>
+    <h1 class="heading-huge heading-heavy">{{ .Title }}</h1>
+</div>
+
+{{ if .Params.toc }}
+{{ partial "toc.html" . }}
+{{ end }}
+
+{{ .Content }}
+
+{{ partial "prevnext.html" . }}
+</div>
+
+{{ end }}

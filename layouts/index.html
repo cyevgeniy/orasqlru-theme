@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+	{{ range .Sections }}
+		{{ partial "sectionname.html" . }}
+		<div class="box-container container edges centered">
+			<div class="grid mb-10">
+				{{ range .Sections }}
+					{{ partial "sectionblock.html" . }}
+				{{ end }}
+			</div>
+		</div>
+
+	{{ end }}
+{{ end }}

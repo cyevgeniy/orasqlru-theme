@@ -1,0 +1,16 @@
+<div class="card column column-6 bg-toc p-8 r-base">
+	<div class="card-head">
+		<h3 class="heading-medium">{{ .Title }}</h3>
+	</div>
+	<div class="card-box mt-3">
+		<nav class="menu menu-stacked menu-numbered">
+			<ol class="menu-list">
+				{{ range .Pages }} 
+				<li class="menu-item">
+					<a href="{{ .Permalink }}" class="menu-link">{{ .Title }}</a>
+				</li>
+				{{ end }}
+			</ol>
+		</nav>
+	</div>
+</div>

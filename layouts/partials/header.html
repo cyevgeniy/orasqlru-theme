@@ -1,0 +1,20 @@
+<div class="navbar bg-dark mb-10" >
+    <div class="navbar-container container edges centered">
+        <div class="navbar-brand">
+            <a href="/" class="brand">
+                {{.Site.Params.brand}}
+            </a>
+        </div>
+        
+        <div class="navbar-nav ml-6">
+        {{ range .Site.Menus.main }}
+		{{ $text := print .Name | safeHTML }}
+            <nav class="nav nav-light nav-semibold">
+		<ul class="nav-list">
+		    <li class="nav-item"><a href="{{ .URL }}" class="nav-link">{{ $text }}</a></li>
+		</ul>
+	    </nav>
+	{{ end }}
+        </div>
+    </div>
+</div>
