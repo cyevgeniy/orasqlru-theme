@@ -3,8 +3,18 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel="stylesheet" href="/css/superkube.min.css">
 <link rel="stylesheet" href="/css/main.css">
-<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101305633);</script>
-<script async src="//static.getclicky.com/js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144211477-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144211477-1');
+</script>
+
+
 {{ $title := print .Site.Title " | " .Title }}
 <title>{{ $title }}</title>
 </head>
