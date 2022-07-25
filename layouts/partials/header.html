@@ -7,14 +7,19 @@
         </div>
         
         <div class="navbar-nav ml-6">
-        {{ range .Site.Menus.main }}
-		{{ $text := print .Name | safeHTML }}
             <nav class="nav nav-light nav-semibold">
-		<ul class="nav-list">
-		    <li class="nav-item"><a href="{{ .URL }}" class="nav-link">{{ $text }}</a></li>
+		      <ul class="nav-list">
+                {{ range .Site.Sections }}
+		    <li class="nav-item"><a href="/#{{ .Params.id }}" class="nav-link">{{ .Title }}</a></li>
+            {{ end }}
+                    {{ range .Site.Menus.main }}
+		{{ $text := print .Name | safeHTML }}
+
+		        <li class="nav-item"><a href="{{ .URL }}" class="nav-link">{{ $text }}</a></li>
+                	{{ end }}
 		</ul>
 	    </nav>
-	{{ end }}
+
         </div>
     </div>
 </div>
