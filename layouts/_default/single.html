@@ -1,53 +1,8 @@
 {{ define "main" }}
 
-<main class="layout layout-doc pt-8 pb-10">
-  <div class="layout-container container edges centered flex-layout">
+    <div class="content">
 
-    <!-- Sidebar -->
-
-    <div class="layout-sidebar flex-sidebar hidden-sm pr-12 pr-off-sm mb-8-sm">
-
-      <nav class="menu menu-semibold menu-muted menu-medium">
-        {{ $permalink := .Page.Permalink }}
-        {{ range .Site.Sections }}
-        {{ range .Sections }}
-        <h5 class="heading-micro">{{ .Title }}</h5>
-
-        <ul class="menu-list">
-          {{ range .Pages }}
-          {{ if eq $permalink .Permalink }}
-          <li class="menu-item active">
-            {{ else }}
-          <li class="menu-item">
-            {{ end }}
-            <a href="{{ .Permalink }}" class="menu-link">{{ .Title }}</a></li>
-          {{ end }}
-        </ul>
-        {{ end }}
-        {{ end }}
-      </nav>
-    </div>
-
-    <!-- Content -->
-
-
-    <div class="layout-content flex-content">
-      <div id="container" class="container-medium edges centered">
-        <div class="doc-head mb-4 container-10">
-          <h5 class="heading-micro heading-muted">{{ .CurrentSection.Title }}</h5>
-          <h1 class="heading-huge heading-heavy">{{ .Title }}</h1>
-        </div>
-
-        {{ if .Params.toc }}
-        {{ partial "toc.html" . }}
-        {{ end }}
-
+        <h1>{{ .Title }}</h1>
         {{ .Content }}
-
-        {{ partial "prevnext.html" . }}
-      </div>
     </div>
-  </div>
-</main>
-
 {{ end }}

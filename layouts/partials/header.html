@@ -1,25 +1,14 @@
-<div class="navbar bg-dark" >
-    <div class="navbar-container container edges centered">
-        <div class="navbar-brand">
-            <a href="/" class="brand">
-                {{.Site.Params.brand}}
-            </a>
-        </div>
-        
-        <div class="navbar-nav ml-6">
-            <nav class="nav nav-light nav-semibold">
-		      <ul class="nav-list">
-                {{ range .Site.Sections }}
-		    <li class="nav-item"><a href="/#{{ .Params.id }}" class="nav-link">{{ .Title }}</a></li>
-            {{ end }}
-                    {{ range .Site.Menus.main }}
-		{{ $text := print .Name | safeHTML }}
+<div class="menu">
+    <a href="/" class="menu__item">
+        {{.Site.Params.brand}}
+    </a>
 
-		        <li class="nav-item"><a href="{{ .URL }}" class="nav-link">{{ $text }}</a></li>
-                	{{ end }}
-		</ul>
-	    </nav>
+    {{ range .Site.Sections }}
+        <a href="/#{{ .Params.id }}" class="menu__item">{{ .Title }}</a>
+    {{ end }}
+    {{ range .Site.Menus.main }}
+        {{ $text := print .Name | safeHTML }}
+        <a href="{{ .URL }}" class="menu__item">{{ $text }}</a>
+    {{ end }}
 
-        </div>
-    </div>
 </div>

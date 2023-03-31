@@ -1,19 +1,13 @@
-<nav class="pagination mb-3">
-    <ul class="pagination-list">
-
+<nav class="nextprev">
 	{{ if .NextInSection }}	
 		{{ with .NextInSection }}
-		<li class="pagination-item">
 		    <a href="{{ .Permalink }}" class="pagination-link pagination-prev"> &lt; {{ .Title }} </a>
-		</li>
 		{{ end }}
 	{{ end }}
 
 	{{ if .PrevInSection }}	
 		{{ with .PrevInSection }}
-		<li class="pagination-item ml-auto">
-		    <a href="{{ .Permalink }}" class="pagination-link pagination-next"> {{ .Title }} &gt; </a>
-		</li>
+		    <a href="{{ .Permalink }}" class="nextprev__next"> {{ .Title }} &gt; </a>
 		{{ end }}
 	{{ end }}
     </ul>

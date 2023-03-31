@@ -1,0 +1,5 @@
+<ul id="breadcrumbs">
+    {{ if .Parent }}
+        <a href="{{ .Parent.RelPermalink }}"> {{ .Parent.Title }} </a>
+    {{ end }}
+</ul>

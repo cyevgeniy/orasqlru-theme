@@ -16,9 +16,7 @@ so it will list only second level headers and addes styles -->
 {{- $firstHeaderLevel := len (seq (index (findRE "[1-4]" (index $headers 0) 1) 0)) -}}
 
 {{- $.Scratch.Set "bareul" slice -}}
-<div class="doc-toc mt-6 mb-6">
-<nav class="menu menu-underline menu-medium menu-numbered">
-<ul class="menu-list">
+<ul>
   {{- range seq (sub $firstHeaderLevel $largest) -}}
     <ul>
     {{- $.Scratch.Add "bareul" (sub (add $largest .) 1) -}}
@@ -64,11 +62,11 @@ so it will list only second level headers and addes styles -->
             {{- end -}}
           {{- end -}}
         {{- end -}}
-        <li class="menu-item">
-          <a href="#{{- $cleanedID  -}}" class="menu-link">{{- $header | safeHTML -}}</a>
+        <li>
+          <a href="#{{- $cleanedID  -}}">{{- $header | safeHTML -}}</a>
     {{- else -}}
     <li class="menu-item">
-      <a href="#{{- $cleanedID -}}" class="menu-link">{{- $header | safeHTML -}}</a>
+      <a href="#{{- $cleanedID -}}" >{{- $header | safeHTML -}}</a>
     {{- end -}}
   {{- end -}}
   <!-- {{- $firstHeaderLevel := len (seq (index (findRE "[1-4]" (index $headers 0) 1) 0)) -}} -->
